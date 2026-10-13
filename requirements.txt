@@ -1,0 +1,1 @@
+torch==2.11.0+cu130torchvision==0.26.0+cu130numpy==2.1.3pandas==2.2.3matplotlib==3.10.0scikit-learn==1.6.1pillow==11.3.0tqdm==4.67.3

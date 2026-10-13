@@ -1,0 +1,6 @@
+exp_id,description,arch,strategy,augment,trainable_params,total_params,lr_groups,epochs_run,best_epoch,train_time_s,time_per_epoch_s,best_val_loss,train_acc_best,val_acc_best,gap_train_val,test_acc,test_macro_f1,train_acc_clean,gap_clean
+B1,ResNet-18 dari inisialisasi acak,resnet18,scratch,True,11181642,11181642,"{""all_layers"": 0.001}",12,7,168.6,14.0,1.7316,0.4396,0.3792,0.0604,0.398,0.3775,,
+B2,"ResNet-18 pretrained, backbone beku, hanya fc dilatih",resnet18,feature_extract,True,5130,11181642,"{""head"": 0.001}",23,18,295.4,12.8,0.2559,0.9381,0.8993,0.0388,0.9197,0.9195,,
+B3,"ResNet-18 pretrained, layer4 + fc dilatih (differential LR)",resnet18,finetune,True,8398858,11181642,"{""last_block"": 0.0001, ""head"": 0.001}",8,3,100.3,12.5,0.204,0.9561,0.9128,0.0434,0.9164,0.9157,0.9827,0.0699
+B4_noaug,"Sama dengan B3, tetapi TANPA augmentasi",resnet18,finetune,False,8398858,11181642,"{""last_block"": 0.0001, ""head"": 0.001}",10,5,87.5,8.8,0.2216,1.0,0.9094,0.0906,0.9331,0.9325,1.0,0.0906
+B5,"EfficientNet-B0 pretrained, stage terakhir + classifier dilatih (differential LR)",efficientnet_b0,finetune,True,1142202,4020358,"{""last_block"": 0.0001, ""head"": 0.001}",23,18,344.2,15.0,0.124,0.9935,0.9597,0.0338,0.9365,0.9361,,
